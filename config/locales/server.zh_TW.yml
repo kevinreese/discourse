@@ -462,7 +462,7 @@ zh_TW:
     must_approve_users: "用戶必須獲得管理員批准方能訪問"
     ga_tracking_code: "谷歌分析追蹤代碼，例如：UA-12345678-9。參考 http://google.com/analytics"
     ga_domain_name: "谷歌分析域名，例如：mysite.com；參考 http://google.com/analytics"
-    top_menu: "確定在主頁導航條包含哪些條目，以及排列順序。例如：latest|hot|read|starred|unread|new|posted|categories"
+    top_menu: "確定在主頁導航條包含哪些條目，以及排列順序。例如：latest|new|unread|starred|categories|top|read|posted"
     post_menu: "確定在帖子菜單條包含哪些條目，以及排列順序。例如：like|edit|flag|delete|share|bookmark|reply"
     share_links: "確定在分享對話框裏顯示哪些條目、以什麽順序顯示。例如 twitter|facebook|google+"
     track_external_right_clicks: "追蹤外部鏈接的右鍵點擊（例如：在浏覽器新標簽打開），缺省是禁用的，因爲它會重寫URL"
