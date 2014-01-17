@@ -3,8 +3,8 @@
   /**
     Display a list of cloaked items
 
-    @class CloakedContainerView
-    @extends Ember.View
+    @class CloakedCollectionView
+    @extends Ember.CollectionView
     @namespace Ember
   **/
   Ember.CloakedCollectionView = Ember.CollectionView.extend({
@@ -13,7 +13,7 @@
 
     init: function() {
       var cloakView = this.get('cloakView'),
-          idProperty = this.get('idProperty') || 'id';
+          idProperty = this.get('idProperty');
 
       // Set the slack ratio differently to allow for more or less slack in preloading
       var slackRatio = parseFloat(this.get('slackRatio'));
@@ -22,11 +22,12 @@
       this.set('itemViewClass', Ember.CloakedView.extend({
         classNames: [cloakView + '-cloak'],
         cloaks: cloakView,
-        defaultHeight: this.get('defaultHeight') || 100,
 
         init: function() {
           this._super();
-          this.set('elementId', cloakView + '-cloak-' + this.get('content.' + idProperty));
+          if (idProperty) {
+            this.set('elementId', cloakView + '-cloak-' + this.get('content.' + idProperty));
+          }
         }
       }));
 
@@ -171,8 +172,8 @@
     },
 
     willDestroyElement: function() {
-      $(document).bind('touchmove.ember-cloak');
-      $(window).bind('scroll.ember-cloak');
+      $(document).unbind('touchmove.ember-cloak');
+      $(window).unbind('scroll.ember-cloak');
     }
 
   });
